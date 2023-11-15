@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-Plan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #leadingInfo {
+            margin-bottom: 20px;
+        }
+        #ipTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #ipTable th, #ipTable td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #ipTable th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="leadingInfo">
+        <h2>Leading Information</h2>
+        <p>Subnet: 10.164.0</p>
+        <p>Netmask: /23</p>
+    </div>
+
+    <div id="ipTable">
+        <h2>Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>Status</th>
+                    <th>Reserved Machine Name</th>
+                    <th>Reserved Admin Name</th>
+                </tr>
+            </thead>
+            <tbody id="ipTableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // JSON data for the IP table
+        const ipData = [
+            { "IP": "10.164.64.1", "Status": "Reserved", "ReservedMachineName": "GW", "ReservedAdminName": "By Admin" },
+            { "IP": "10.164.64.10", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
+            { "IP": "10.164.64.11", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
+            { "IP": "10.164.64.12", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
+            { "IP": "10.164.65.1", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
+            { "IP": "10.164.65.2", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
+            { "IP": "10.164.65.100", "Status": "Reserved", "ReservedMachineName": "KATALOGSERVER", "ReservedAdminName": "Av Lærer for 2IT" },
+            { "IP": "10.164.65.101", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
+            { "IP": "10.164.65.102", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" }
+        ];
+
+        // Function to generate the IP table
+        function generateIPTable() {
+            const ipTableBody = document.getElementById('ipTableBody');
+
+            ipData.forEach(entry => {
+                const tableRow = `<tr>
+                    <td>${entry.IP}</td>
+                    <td>${entry.Status}</td>
+                    <td>${entry.ReservedMachineName}</td>
+                    <td>${entry.ReservedAdminName}</td>
+                </tr>`;
+                ipTableBody.innerHTML += tableRow;
+            });
+        }
+
+        // Call the function to generate the IP table
+        generateIPTable();
+    </script>
+
+</body>
+</html>
