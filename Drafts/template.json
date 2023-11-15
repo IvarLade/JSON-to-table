@@ -1,0 +1,8 @@
+[{"IP-From":"10.164.64.1","IP-To":"10.164.64.1","Status":"Reserved","ReservedMachineName":"GW","ReservedAdminName":"By Admin"},
+{"IP-From":"10.164.64.10","IP-To":"10.164.64.10","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+{"IP-From":"10.164.64.11","IP-To":"10.164.64.11","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+{"IP-From":"10.164.64.12","IP-To":"10.164.64.12","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+{"IP-From":"10.164.65.1","IP-To":"10.164.65.1","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},{"IP-From":"10.164.65.2","IP-To":"10.164.65.2","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+{"IP-From":"10.164.65.100","IP-To":"10.164.65.100","Status":"Reserved","ReservedMachineName":"KATALOGSERVER","ReservedAdminName":"Av Lærer for 2IT"},
+{"IP-From":"10.164.65.101","IP-To":"10.164.65.101","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+{"IP-From":"10.164.65.102","IP-To":"10.164.65.102","Status":"Available","ReservedMachineName":"","ReservedAdminName":""}]
