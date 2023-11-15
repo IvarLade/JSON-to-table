@@ -40,7 +40,8 @@
         <table>
             <thead>
                 <tr>
-                    <th>IP</th>
+                    <th>IP From</th>
+                    <th>IP To</th>
                     <th>Status</th>
                     <th>Reserved Machine Name</th>
                     <th>Reserved Admin Name</th>
@@ -53,15 +54,16 @@
     <script>
         // JSON data for the IP table
         const ipData = [
-            { "IP": "10.164.64.1", "Status": "Reserved", "ReservedMachineName": "GW", "ReservedAdminName": "By Admin" },
-            { "IP": "10.164.64.10", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
-            { "IP": "10.164.64.11", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
-            { "IP": "10.164.64.12", "Status": "Reserved", "ReservedMachineName": "UserComputer", "ReservedAdminName": "By DHCP server" },
-            { "IP": "10.164.65.1", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
-            { "IP": "10.164.65.2", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
-            { "IP": "10.164.65.100", "Status": "Reserved", "ReservedMachineName": "KATALOGSERVER", "ReservedAdminName": "Av Lærer for 2IT" },
-            { "IP": "10.164.65.101", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" },
-            { "IP": "10.164.65.102", "Status": "Available", "ReservedMachineName": "", "ReservedAdminName": "" }
+            {"IPFrom":"10.164.64.1","IPTo":"10.164.64.1","Status":"Reserved","ReservedMachineName":"GW","ReservedAdminName":"By Admin"},
+            {"IPFrom":"10.164.64.10","IPTo":"10.164.64.10","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+            {"IPFrom":"10.164.64.11","IPTo":"10.164.64.11","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+            {"IPFrom":"10.164.64.12","IPTo":"10.164.64.12","Status":"Reserved","ReservedMachineName":"UserComputer","ReservedAdminName":"By DHCP server"},
+            {"IPFrom":"10.164.65.0","IPTo":"10.164.65.0","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+            {"IPFrom":"10.164.65.1","IPTo":"10.164.65.1","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+            {"IPFrom":"10.164.65.2","IPTo":"10.164.65.99","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+            {"IPFrom":"10.164.65.100","IPTo":"10.164.65.100","Status":"Reserved","ReservedMachineName":"KATALOGSERVER","ReservedAdminName":"Av Lærer for 2IT"},
+            {"IPFrom":"10.164.65.101","IPTo":"10.164.65.101","Status":"Available","ReservedMachineName":"","ReservedAdminName":""},
+            {"IPFrom":"10.164.65.102","IPTo":"10.164.65.102","Status":"Available","ReservedMachineName":"","ReservedAdminName":""}
         ];
 
         // Function to generate the IP table
@@ -70,7 +72,8 @@
 
             ipData.forEach(entry => {
                 const tableRow = `<tr>
-                    <td>${entry.IP}</td>
+                    <td>${entry.IPFrom}</td>
+                    <td>${entry.IPTo}</td>
                     <td>${entry.Status}</td>
                     <td>${entry.ReservedMachineName}</td>
                     <td>${entry.ReservedAdminName}</td>
